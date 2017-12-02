@@ -6,6 +6,7 @@ from forms import LoginForm, RegistrationForm
 from .. import db
 from ..models import Employee
 
+
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
     """
@@ -30,6 +31,7 @@ def register():
 
     # load registration template
     return render_template('auth/register.html', form=form, title='Register')
+
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -57,6 +59,7 @@ def login():
 
     # load login template
     return render_template('auth/login.html', form=form, title='Login')
+
 
 @auth.route('/logout')
 @login_required
